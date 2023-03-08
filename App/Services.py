@@ -30,6 +30,20 @@ def get_country(continent):
     mycursor.close()
     conn.myconn.close()
     return results
+def get_country_captital(country_name):
+    #Open Connections
+    conn.myconn._open_connection()
+    mycursor = conn.myconn.cursor()
+    
+    #Excecute SQL
+    mycursor.execute("SELECT * FROM city WHERE Capital = 1 and countryId=(select countryId FROM country WHERE Name=%s);",[country_name])
+    results = mycursor.fetchall()
+    
+    #Close Connections
+    mycursor.close()
+    conn.myconn.close()
+    return results
+    return
 
 def create_country(data):
      #Open Connections
