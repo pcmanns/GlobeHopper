@@ -19,3 +19,13 @@ def get_countries():
 def create_country(data):
     Services.create_country(data)
     return jsonify({'message':'Data inseted successfully'})
+
+
+def update_country(country_id,data):
+    Services.update_country(country_id,data)
+    return jsonify({'message':'Data update successfully'})
+
+
+def delete_country(country_id):
+    Services.delete_country(country_id)
+    return jsonify({'message':'Country_id'+country_id+' delete successfully'})
