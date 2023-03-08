@@ -3,7 +3,7 @@
 from flask import Flask, request, jsonify
 import Services
 #Converted a list to dict
-def getCountries():
+def get_countries():
     results = Services.all_countries()
     data = []
     for row in results:

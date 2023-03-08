@@ -8,8 +8,8 @@ app = Flask(__name__)
 
 #GET Api
 @app.get('/countries')
-def getAllCountries():
-    return country.getCountries()
+def get_all_countries():
+    return country.get_countries()
 
 #Create POST API
 @app.post('/countries')
