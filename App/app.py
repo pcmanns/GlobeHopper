@@ -18,12 +18,12 @@ def create_county():
     return country.create_country(data)
 
 @app.put('/countries/<country_id>')
-def update_cont(country_id):
+def update_country(country_id):
     data = request.json
     return country.update_country(country_id,data)
 
 @app.delete('/countries/<country_id>')
-def delete_cont(country_id):
+def delete_country(country_id):
     return country.delete_country(country_id)
 
 
