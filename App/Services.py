@@ -115,11 +115,11 @@ def create_city(data):
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
 
-    name=data["Name"],
-    countyid=data["CountryId"],
-    capital=data["Capital"],
-    firstlandmark=data["FirstLandmark"],
-    secondlandmark=data["SecondLandmark"],
+    name=data["Name"]
+    countyid=data["CountryId"]
+    capital=data["Capital"]
+    firstlandmark=data["FirstLandmark"]
+    secondlandmark=data["SecondLandmark"]
     thirdlandmark=data["ThirdLandmark"]
     
     mysql="INSERT INTO City (Name, CountryId, Capital, FirstLandmark, SecondLandmark, ThirdLandmark) VALUES(%s, %s, %s, %s, %s, %s)"
@@ -136,15 +136,16 @@ def update_city(city_id,data):
     mycursor = conn.myconn.cursor()
 
     cityid=city_id
-    name=data["Name"],
-    countyid=data["CountryId"],
-    capital=data["Capital"],
-    firstlandmark=data["FirstLandmark"],
-    secondlandmark=data["SecondLandmark"],
+    name=data["Name"]
+    countyid=data["CountryId"]
+    capital=data["Capital"]
+    firstlandmark=data["FirstLandmark"]
+    secondlandmark=data["SecondLandmark"]
     thirdlandmark=data["ThirdLandmark"]
     
     mysql="UPDATE city SET Name=%s, CountryId=%s, Capital=%s, FirstLandmark=%s, SecondLandmark=%s, ThirdLandmark=%s WHERE cityId=%s"
     values=(name,countyid,capital,firstlandmark,secondlandmark,thirdlandmark,cityid)
+    
     mycursor.execute(mysql,values)
     
     

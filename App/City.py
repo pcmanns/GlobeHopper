@@ -26,10 +26,10 @@ def create_city(data):
 
 
 def update_city(city_id,data):
-    Services.update_country(city_id,data)
+    Services.update_city(city_id,data)
     return jsonify({'message':'Data update successfully'})
 
 
 def delete_city(city_id):
-    Services.delete_country(city_id)
+    Services.delete_city(city_id)
     return jsonify({'message':'Country_id'+city_id+' delete successfully'})

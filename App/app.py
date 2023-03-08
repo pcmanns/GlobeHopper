@@ -49,12 +49,12 @@ def create_city():
     data = request.json
     return city.create_city(data)
 
-@app.put('/cities/<country_id>')
+@app.put('/cities/<city_id>')
 def update_city(city_id):
     data = request.json
     return city.update_city(city_id,data)
 
-@app.delete('/cities/<country_id>')
+@app.delete('/cities/<city_id>')
 def delete_city(city_id):
     return city.delete_city(city_id)
 
