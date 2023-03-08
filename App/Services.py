@@ -17,6 +17,19 @@ def all_countries():
     mycursor.close()
     conn.myconn.close()
     return results
+def get_country(continent):
+    #Open Connections
+    conn.myconn._open_connection()
+    mycursor = conn.myconn.cursor()
+    
+    #Excecute SQL
+    mycursor.execute("SELECT * FROM globehopper.country WHERE Continent =%s",[continent])
+    results = mycursor.fetchall()
+    
+    #Close Connections
+    mycursor.close()
+    conn.myconn.close()
+    return results
 
 def create_country(data):
      #Open Connections

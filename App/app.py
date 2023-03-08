@@ -7,12 +7,17 @@ import city
 
 app = Flask(__name__)
 
-#GET Api
+
+
+#COUNTRY CRUD
 @app.get('/countries')
 def get_all_countries():
     return country.get_countries()
 
-#Create POST API
+@app.get('/countries/<continent>')
+def get_country(continent):
+    return country.get_country(continent)
+
 @app.post('/countries')
 def create_county():
     data = request.json
@@ -27,12 +32,14 @@ def update_country(country_id):
 def delete_country(country_id):
     return country.delete_country(country_id)
 
-#GET Api
+
+
+
+#CITY CRUD
 @app.get('/cities')
 def get_all_city():
-    return city.get_cities
+    return city.get_cities()
 
-#Create POST API
 @app.post('/cities')
 def create_city():
     data = request.json
