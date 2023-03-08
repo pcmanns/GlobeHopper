@@ -9,7 +9,7 @@ app = Flask(__name__)
 #read Api
 @app.get('/countries')
 def getAllCountries():
-    return countries.getCountries()
+    return country.getCountries()
 
 
 #Execute on the terminal
