@@ -4,8 +4,8 @@ from flask import Flask, request, jsonify
 import Services
 #Converted a list to dict
 
-def get_citys():
-    results = Services.all_citys()
+def get_cities():
+    results = Services.all_cities()
     data = []
     for row in results:
         data.append({

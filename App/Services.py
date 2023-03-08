@@ -70,7 +70,7 @@ def delete_country(country_id):
     conn.myconn.close()
 
 #City CURD
-def all_city():
+def all_cities():
     #Open Connections
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
