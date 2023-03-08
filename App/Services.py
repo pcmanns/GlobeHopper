@@ -43,7 +43,6 @@ def get_country_captital(country_name):
     mycursor.close()
     conn.myconn.close()
     return results
-    return
 
 def create_country(data):
      #Open Connections
