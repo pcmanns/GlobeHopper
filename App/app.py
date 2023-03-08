@@ -18,7 +18,7 @@ def get_all_countries():
 def get_country(continent):
     return country.get_country(continent)
 
-@app.put('/countries/<country_name>/1')
+@app.get('/countries/<country_name>/1')
 def get_capital_country(country_name):
     return country.get_captital(country_name)
 
