@@ -49,13 +49,12 @@ def create_country(data):
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
 
-    countryid=data["CountryId"]
     name=data["Name"]
     populatiion=data["Population"]
     continent=data["Continent"]
     
-    mysql="INSERT INTO Country (CountryId, Name, Population, Continent) VALUES (%s, %s, %s, %s)"
-    values=(countryid,name,populatiion,continent)
+    mysql="INSERT INTO Country (Name, Population, Continent) VALUES (%s, %s, %s)"
+    values=(name,populatiion,continent)
     mycursor.execute(mysql,values)
     
     #Close Connections
@@ -116,7 +115,6 @@ def create_city(data):
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
 
-    cityid=data["CityId"],
     name=data["Name"],
     countyid=data["CountryId"],
     capital=data["Capital"],
@@ -124,8 +122,8 @@ def create_city(data):
     secondlandmark=data["SecondLandmark"],
     thirdlandmark=data["ThirdLandmark"]
     
-    mysql="INSERT INTO City (CityId, Name, CountryId, Capital, FirstLandmark, SecondLandmark, ThirdLandmark) VALUES(%s, %s, %s, %s, %s, %s, %s)"
-    values=(cityid,name,countyid,capital,firstlandmark,secondlandmark,thirdlandmark)
+    mysql="INSERT INTO City (Name, CountryId, Capital, FirstLandmark, SecondLandmark, ThirdLandmark) VALUES(%s, %s, %s, %s, %s, %s)"
+    values=(name,countyid,capital,firstlandmark,secondlandmark,thirdlandmark)
     mycursor.execute(mysql,values)
     
     #Close Connections
