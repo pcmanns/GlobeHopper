@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 import conn
 
 
-def allCountries():
+def all_countries():
     #Open Connections
     conn.myconn._open_connection()
     mycursor = conn.myconn.cursor()
