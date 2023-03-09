@@ -32,4 +32,4 @@ def update_city(city_id,data):
 
 def delete_city(city_id):
     Services.delete_city(city_id)
-    return jsonify({'message':'Country_id'+city_id+' delete successfully'})
+    return jsonify({'message':'City_id '+city_id+' delete successfully'})

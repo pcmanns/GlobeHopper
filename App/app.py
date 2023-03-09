@@ -7,13 +7,6 @@ import city
 
 app = Flask(__name__)
 
-
-
-#COUNTRY CRUD
-@app.get('/countries')
-def get_all_countries():
-    return country.get_countries()
-
 @app.get('/countries/<continent>')
 def get_country(continent):
     return country.get_country(continent)
@@ -21,6 +14,13 @@ def get_country(continent):
 @app.get('/countries/<country_name>/1')
 def get_capital_country(country_name):
     return country.get_captital(country_name)
+
+
+
+#COUNTRY CRUD
+@app.get('/countries')
+def get_all_countries():
+    return country.get_countries()
 
 @app.post('/countries')
 def create_county():

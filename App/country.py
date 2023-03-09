@@ -15,6 +15,7 @@ def get_countries():
         })
 
     return jsonify(data)
+
 def get_country(continent):
     results = Services.get_country(continent)
     data = []

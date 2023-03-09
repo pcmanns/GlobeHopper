@@ -3,20 +3,6 @@
 from flask import Flask, request, jsonify
 import conn
 
-
-def all_countries():
-    #Open Connections
-    conn.myconn._open_connection()
-    mycursor = conn.myconn.cursor()
-    
-    #Excecute SQL
-    mycursor.execute("SELECT * FROM globehopper.country")
-    results = mycursor.fetchall()
-    
-    #Close Connections
-    mycursor.close()
-    conn.myconn.close()
-    return results
 def get_country(continent):
     #Open Connections
     conn.myconn._open_connection()
@@ -30,6 +16,8 @@ def get_country(continent):
     mycursor.close()
     conn.myconn.close()
     return results
+
+
 def get_country_captital(country_name):
     #Open Connections
     conn.myconn._open_connection()
@@ -43,6 +31,22 @@ def get_country_captital(country_name):
     mycursor.close()
     conn.myconn.close()
     return results
+
+#Country CRUD
+def all_countries():
+    #Open Connections
+    conn.myconn._open_connection()
+    mycursor = conn.myconn.cursor()
+    
+    #Excecute SQL
+    mycursor.execute("SELECT * FROM globehopper.country")
+    results = mycursor.fetchall()
+    
+    #Close Connections
+    mycursor.close()
+    conn.myconn.close()
+    return results
+
 
 def create_country(data):
      #Open Connections
@@ -60,7 +64,8 @@ def create_country(data):
     #Close Connections
     mycursor.close()
     conn.myconn.close()
-    
+
+
 def update_country(country_id,data):
      #Open Connections
     conn.myconn._open_connection()
@@ -80,6 +85,8 @@ def update_country(country_id,data):
     mycursor.close()
     conn.myconn.close()
     
+
+
 def delete_country(country_id):
      #Open Connections
     conn.myconn._open_connection()
@@ -93,6 +100,9 @@ def delete_country(country_id):
     #Close Connections
     mycursor.close()
     conn.myconn.close()
+
+
+
 
 #City CURD
 def all_cities():
